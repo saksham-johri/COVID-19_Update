@@ -21,5 +21,8 @@ new_deaths = list(obj.find("li", {"class": "news_li"}).strong.next_siblings)[1].
 
 
 # OUTPUT
-print("********  COVID-19 IN INDIA TILL NOW  ********")
+print("****  COVID-19 IN INDIA TILL NOW  ****")
 print(f"Total Cases: {total_cases} \nTotal Deaths: {total_deaths} \nRecovered: {recovered}")
+
+print("\n****  TODAY'S UPDATE  ****")
+print(f"New Cases: {new_cases} \nNew Deaths: {new_deaths}")
