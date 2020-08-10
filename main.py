@@ -8,7 +8,7 @@ req = Request("https://www.worldometers.info/coronavirus/country/india/", header
 html = urlopen(req)
 # print(html.status)
 
-obj = bs(html)
+obj = bs(html, features="html.parser")
 
 # COVID-19 IN INDIA
 total_cases = obj.find("div", {"class": "maincounter-number"}).span.text
@@ -21,3 +21,5 @@ new_deaths = list(obj.find("li", {"class": "news_li"}).strong.next_siblings)[1].
 
 
 # OUTPUT
+print("********  COVID-19 IN INDIA TILL NOW  ********")
+print(f"Total Cases: {total_cases} \nTotal Deaths: {total_deaths} \nRecovered: {recovered}")
