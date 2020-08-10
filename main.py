@@ -1,4 +1,4 @@
-# DEVELOVED BY SAKSHAM
+# DEVELOPED BY SAKSHAM
 
 from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup as bs
@@ -14,8 +14,10 @@ obj = bs(html)
 total_cases = obj.find("div", {"class": "maincounter-number"}).span.text
 total_deaths = list(obj.find("div", {"id": "maincounter-wrap"}).next_siblings)[1].span.text
 recovered = list(obj.find("div", {"id": "maincounter-wrap"}).next_siblings)[3].span.text
-print(recovered)
 
 # TODAY'S UPDATE
 new_cases = obj.find("li", {"class": "news_li"}).strong.text.split()[0]
 new_deaths = list(obj.find("li", {"class": "news_li"}).strong.next_siblings)[1].text.split()[0]
+
+
+# OUTPUT
